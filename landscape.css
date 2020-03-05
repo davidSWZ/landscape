@@ -1,0 +1,288 @@
+body{
+  width:100%;
+  height: 100%;
+  margin:0;
+  padding: 0
+}
+
+.box{
+  position: relative;
+    width:100%;
+    height: 20vh;
+    overflow: hidden;
+}
+
+.sky{
+  position: absolute;
+  background: #C6E5EE;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: change-sky;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.92,-0.02,.07,.98);
+}
+
+@keyframes change-sky {
+  0%{
+    background: #C6E5EE;
+  }
+  100%{
+    background: #F79282;
+  }
+}
+
+.sun{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #F7F709;
+  top:10%;
+  left: 10%;
+  box-shadow: 0 0 100px #F3EE49,
+              0 0 50px #F4DC2A;
+  z-index: 0;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: moving-sun;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.92,-0.02,.07,.98);
+}
+
+@keyframes moving-sun {
+  0%{
+    left: 10%;
+    background: #F7F709;
+    box-shadow: 0 0 100px #F3EE49,
+                0 0 50px #F4DC2A;
+  }
+
+  100%{
+    left: 90%;
+    background: #FDAC2F;
+    box-shadow: 0 0 100px #FE3D3D,
+                0 0 50px #CC3333;
+  }
+}
+
+.nuage{
+  position: absolute;
+  width: 70px;
+  height: 10px;
+  border-radius: 50px;
+  background: #F6F6F6;
+  top:60%;
+  left: 20%;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-name: moving-nuage;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.bump1{
+  position: absolute;
+  width: 40%;
+  height: 200%;
+  border-top-left-radius: 200%;
+  border-top-right-radius: 200%;
+  background: #F6F6F6;
+  top:-100%;
+  left: 20%;
+}
+
+.bump2{
+  position: absolute;
+  width: 50%;
+  height: 200%;
+  border-top-left-radius: 80%;
+  border-top-right-radius: 80%;
+  background: #F6F6F6;
+  top:-150%;
+  left: 40%;
+
+}
+
+@keyframes moving-nuage {
+  100%{
+      left: 90%;
+  }
+}
+
+.ground{
+  position: absolute;
+  width:120%;
+  height:50px;
+  left: -110px;
+  bottom: -20px;
+  background: #C8A181;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: change-ground-2;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.92,-0.02,.07,.98);
+}
+
+@keyframes change-ground-2 {
+  0%{
+    background: #D8C3AC;
+  }
+  100%{
+    background: #C8A181;
+  }
+}
+
+
+.ground-copy{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background: #C8A181;
+  border-radius: 50%;
+  z-index: 2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: change-ground;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.92,-0.02,.07,.98);
+}
+
+@keyframes change-ground {
+  0%{
+    background: #C8A181;
+  }
+  100%{
+    background: #B39781;
+  }
+}
+
+.montain{
+  position: absolute;
+  left: 50%;
+  top: -90px;
+  border-bottom: 100px solid #E6B57D ;
+  border-left: 130px solid transparent;
+  border-right: 130px solid transparent;
+  z-index: 0;
+}
+
+.montain::before{
+  content: "";
+  position: absolute;
+  left: -250px;
+  top: 20px;
+  border-bottom: 130px solid #E6B57D ;
+  border-left: 110px solid transparent;
+  border-right: 110px solid transparent;
+  z-index: 0;
+}
+
+.montain, .montain::before{
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: change-montain;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.92,-0.02,.07,.98);
+}
+
+@keyframes change-montain {
+  0%{
+    border-bottom: 130px solid #E6B57D;
+  }
+  100%{
+    border-bottom: 130px solid #804831;
+  }
+}
+
+.montain-shadow{
+  position: absolute;
+  left: 50%;
+  transform: translate(130px);
+  top: -90px;
+  border-bottom: 100px solid #804831 ;
+  border-right: 130px solid transparent;
+  z-index: 1;
+}
+
+.montain-shadow::before{
+  content: '';
+  position: absolute;
+  left: -140px;
+  top: 20px;
+  border-bottom: 130px solid #804831 ;
+  border-right: 110px solid transparent;
+  z-index: 1;
+}
+
+.montain-shadow, .montain-shadow::before{
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: change-montain-shadow;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.92,-0.02,.07,.98);
+}
+
+@keyframes change-montain-shadow {
+  0%{
+    border-bottom: 130px solid #804831;
+  }
+  100%{
+    border-bottom: 130px solid #E6B57D;
+  }
+}
+
+.tree{
+  position: absolute;
+  left: 30%;
+  top: -45px;
+  width:30px;
+  height: 60px;
+  z-index: 1;
+}
+
+.t2{
+  left: 28%;
+  top: -70px;
+  width: 30px;
+  height: 100px;
+}
+
+.branch{
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  width:100%;
+  height: 50%;
+  background: #88BC41;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: inset -5px -5px 5px #78A638;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-name: branch-shadow;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.92,-0.02,.07,.98);
+}
+
+@keyframes branch-shadow {
+  0%{
+    box-shadow: inset -5px -5px 5px #78A638;
+  }
+  100%{
+    box-shadow: inset 5px -5px 5px #78A638;
+  }
+}
+
+.trunk{
+  position: absolute;
+  left: 40%;
+  bottom: 0px;
+  width:20%;
+  height: 60%;
+  background: #BC7F41;
+  z-index: 0;
+  box-shadow: inset -5px -5px 5px #A9733B;
+}
